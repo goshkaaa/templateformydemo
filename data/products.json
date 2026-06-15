@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Digital Starter",
+    "category": "web",
+    "description": "Адаптивный сайт-визитка с заявкой, контактами и базовой SEO-структурой.",
+    "image": "images/gallery/project-1.svg",
+    "price": 24900
+  },
+  {
+    "id": 2,
+    "title": "Commerce Pro",
+    "category": "commerce",
+    "description": "Каталог услуг или товаров с фильтрацией, избранным и оформлением заказа.",
+    "image": "images/gallery/project-2.svg",
+    "price": 49900
+  },
+  {
+    "id": 3,
+    "title": "Media Pack",
+    "category": "media",
+    "description": "Галерея, баннеры, слайдеры и мультимедийные блоки для презентации бренда.",
+    "image": "images/gallery/project-3.svg",
+    "price": 18900
+  },
+  {
+    "id": 4,
+    "title": "CRM Landing",
+    "category": "web",
+    "description": "Посадочная страница с формами, отзывами, FAQ и аналитической структурой.",
+    "image": "images/gallery/project-4.svg",
+    "price": 32900
+  },
+  {
+    "id": 5,
+    "title": "Brand Visual",
+    "category": "design",
+    "description": "UI Kit, цветовая система, иконки и шаблоны контентных блоков.",
+    "image": "images/gallery/project-5.svg",
+    "price": 15900
+  },
+  {
+    "id": 6,
+    "title": "Support Suite",
+    "category": "service",
+    "description": "Поддержка сайта, обновление контента, проверка форм и резервные копии.",
+    "image": "images/gallery/project-6.svg",
+    "price": 9900
+  }
+]

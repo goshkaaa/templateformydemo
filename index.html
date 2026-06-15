@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Готовый адаптивный сайт для демонстрационного экзамена">
+  <title>DemoSite | Главная</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container" aria-label="Главная навигация">
+      <a class="logo" href="index.html"><span class="logo__mark">D</span><span>DemoSite</span></a>
+      <div class="nav__links" data-nav-links>
+        <a class="is-active" href="index.html" data-i18n="nav_home">Главная</a>
+        <a href="catalog.html" data-i18n="nav_catalog">Каталог</a>
+        <a href="contacts.html" data-i18n="nav_contacts">Контакты</a>
+        <a href="profile.html" data-i18n="nav_profile">Кабинет</a>
+      </div>
+      <div class="nav__actions">
+        <button class="icon-btn" data-lang-toggle type="button" aria-label="Переключить язык">EN</button>
+        <button class="icon-btn" data-theme-toggle type="button" aria-label="Переключить тему">◐</button>
+        <a class="btn btn--ghost" href="login.html">Войти</a>
+        <button class="icon-btn burger" data-burger type="button" aria-label="Меню">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <!-- Меняйте заголовок и описание под тему экзамена -->
+          <span class="badge">Web & Multimedia</span>
+          <h1 data-i18n="hero_title">Готовый каркас сайта для демоэкзамена</h1>
+          <p class="hero__text" data-i18n="hero_text">Адаптивный коммерческий сайт с каталогом, формами, авторизацией, личным кабинетом и понятной архитектурой.</p>
+          <div class="hero__actions">
+            <a class="btn" href="catalog.html" data-i18n="cta_catalog">Открыть каталог</a>
+            <button class="btn btn--accent" type="button" data-modal-open="#requestModal" data-i18n="cta_request">Оставить заявку</button>
+          </div>
+          <div class="hero__stats">
+            <div class="stat card"><b>7</b><span class="muted">страниц</span></div>
+            <div class="stat card"><b>15</b><span class="muted">JS-функций</span></div>
+            <div class="stat card"><b>320+</b><span class="muted">адаптив</span></div>
+          </div>
+        </div>
+        <aside class="hero__panel card" aria-label="Состав проекта">
+          <div class="panel-row"><span>Frontend</span><b>HTML/CSS/JS</b></div>
+          <div class="panel-row"><span>Backend</span><b>Node API</b></div>
+          <div class="panel-row"><span>Database</span><b>MySQL</b></div>
+          <div class="panel-meter"><span style="width: 94%"></span></div>
+          <p class="muted">Готовая структура под экзамен: страницы, UI Kit, JSON, SQL, Docker и личный кабинет.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="metric-strip">
+      <div class="container metric-strip__grid">
+        <div><b>100%</b><span>семантическая верстка</span></div>
+        <div><b>0</b><span>фреймворков</span></div>
+        <div><b>2</b><span>режима авторизации</span></div>
+        <div><b>6</b><span>адаптивных точек</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="advantages">
+      <div class="container">
+        <div class="section__head"><h2>Преимущества</h2><p class="muted">Блок легко адаптируется под любую тему: услуги, товары, обучение, туризм или медиа.</p></div>
+        <div class="grid-3">
+          <article class="feature card"><div class="feature__icon">01</div><h3>Семантика</h3><p class="muted">Чистая структура, понятные классы и доступные формы.</p></article>
+          <article class="feature card"><div class="feature__icon">02</div><h3>Адаптивность</h3><p class="muted">Mobile First, Grid, Flexbox и отсутствие горизонтального скролла.</p></article>
+          <article class="feature card"><div class="feature__icon">03</div><h3>Интерактив</h3><p class="muted">Авторизация, поиск, фильтры, FAQ, модальные окна и уведомления.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head"><h2>Услуги и каталог</h2><p class="muted">Карточки можно заменить товарами, программами, мероприятиями или услугами.</p></div>
+        <div class="grid-3">
+          <article class="service card"><h3>Сайт под ключ</h3><p class="muted">Страницы, формы, кабинет и каталог.</p><a href="catalog.html">Подробнее</a></article>
+          <article class="service card"><h3>UI Kit</h3><p class="muted">Цвета, типографика, кнопки, карточки и поля.</p><a href="catalog.html">Подробнее</a></article>
+          <article class="service card"><h3>Поддержка</h3><p class="muted">Заявки, заказы, избранное и настройки профиля.</p><a href="catalog.html">Подробнее</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <div class="section__head"><span class="badge">Workflow</span><h2>Этапы работы</h2><p class="muted">Этот блок показывает проверяющему, что проект продуман как реальный коммерческий сайт.</p></div>
+        <div class="process-grid">
+          <article class="process-card card"><span>01</span><h3>Анализ ТЗ</h3><p class="muted">Выделяются страницы, формы, роли пользователей, сущности БД и интерактивные сценарии.</p></article>
+          <article class="process-card card"><span>02</span><h3>UI-система</h3><p class="muted">Настраиваются переменные, кнопки, карточки, поля, сетки и адаптивные состояния.</p></article>
+          <article class="process-card card"><span>03</span><h3>Интеграция</h3><p class="muted">Формы подключаются к localStorage или API, личный кабинет получает реальные данные.</p></article>
+          <article class="process-card card"><span>04</span><h3>Проверка</h3><p class="muted">Проверяются ссылки, консоль, адаптивность, формы, авторизация и битые ресурсы.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section__head"><span class="badge">Cases</span><h2>Готовые сценарии адаптации</h2><p class="muted">Один каркас можно быстро превратить в сайт клиники, студии, сервиса, магазина или образовательной платформы.</p></div>
+        <div class="case-grid">
+          <article class="case-card card"><img src="images/gallery/project-4.svg" alt="Сервисный сайт" loading="lazy"><div><h3>Сервисная компания</h3><p class="muted">Услуги, заявки, контакты, FAQ, личный кабинет клиента.</p></div></article>
+          <article class="case-card card"><img src="images/gallery/project-2.svg" alt="Каталог товаров" loading="lazy"><div><h3>Каталог товаров</h3><p class="muted">Фильтры, поиск, избранное, история заказов и карточки товаров.</p></div></article>
+          <article class="case-card card"><img src="images/gallery/project-3.svg" alt="Медиа проект" loading="lazy"><div><h3>Медиа-проект</h3><p class="muted">Галерея, слайдеры, баннеры, отзывы и мультимедийные блоки.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section__head"><h2>Галерея и слайдер</h2><p class="muted">Места под баннеры, изображения, мультимедиа и промо-блоки.</p></div>
+        <div class="slider card" data-slider>
+          <div class="slider__track">
+            <article class="slide" style="background-image:url('images/gallery/project-1.svg')"><div class="slide__content"><h3>Адаптивная главная</h3><p>Hero, преимущества, CTA и контакты.</p></div></article>
+            <article class="slide" style="background-image:url('images/gallery/project-2.svg')"><div class="slide__content"><h3>Каталог</h3><p>Поиск, фильтрация и избранное.</p></div></article>
+            <article class="slide" style="background-image:url('images/gallery/project-3.svg')"><div class="slide__content"><h3>Мультимедиа</h3><p>Галерея и баннеры без внешних зависимостей.</p></div></article>
+          </div>
+          <div class="slider__controls"><button class="icon-btn" data-prev type="button">‹</button><button class="icon-btn" data-next type="button">›</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__head"><h2>Отзывы</h2><p class="muted">Социальное доказательство для коммерческого сайта.</p></div>
+        <div class="grid-3">
+          <article class="review card"><h3>Анна</h3><p class="muted">Все формы работают, структура понятна, проект удобно проверять.</p></article>
+          <article class="review card"><h3>Илья</h3><p class="muted">Личный кабинет и каталог закрывают основные критерии экзамена.</p></article>
+          <article class="review card"><h3>Мария</h3><p class="muted">Дизайн аккуратный, легко заменить контент под новую тему.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="pricing">
+      <div class="container">
+        <div class="section__head"><span class="badge">Pricing</span><h2>Тарифы</h2><p class="muted">Пример коммерческого блока: на экзамене его можно заменить пакетами услуг или категориями товаров.</p></div>
+        <div class="pricing-grid">
+          <article class="price-card card"><h3>Start</h3><p class="price">19 900 ₽</p><ul><li>Главная и контакты</li><li>Форма заявки</li><li>Адаптивность</li></ul><a class="btn btn--ghost" href="catalog.html">Выбрать</a></article>
+          <article class="price-card card price-card--featured"><span class="badge">Популярно</span><h3>Business</h3><p class="price">49 900 ₽</p><ul><li>Каталог и фильтры</li><li>Авторизация</li><li>Личный кабинет</li></ul><a class="btn" href="catalog.html">Выбрать</a></article>
+          <article class="price-card card"><h3>Pro</h3><p class="price">79 900 ₽</p><ul><li>MySQL и Docker</li><li>API-интеграция</li><li>Расширенная документация</li></ul><a class="btn btn--ghost" href="contacts.html">Обсудить</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container split">
+        <div class="section__head"><h2>FAQ</h2><p class="muted">Аккордеон для частых вопросов.</p></div>
+        <div class="faq">
+          <article class="faq__item card is-open"><button class="faq__question" data-faq type="button">Как поменять тематику?</button><div class="faq__answer">Замените тексты, изображения, категории в JSON и палитру в variables.css.</div></article>
+          <article class="faq__item card"><button class="faq__question" data-faq type="button">Где хранятся пользователи?</button><div class="faq__answer">В демо-режиме данные сохраняются в localStorage. В полноценном режиме авторизация идет через Node.js API и MySQL.</div></article>
+          <article class="faq__item card"><button class="faq__question" data-faq type="button">Нужен ли сервер?</button><div class="faq__answer">Для MySQL нужен запуск через docker compose up --build. Простое открытие HTML не может подключиться к базе данных.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container split">
+        <div>
+          <div class="section__head"><h2>Контакты</h2><p class="muted">Москва, ул. Примерная, 10 · +7 900 123-45-67 · info@example.com</p></div>
+          <a class="btn btn--ghost" href="contacts.html">Все контакты</a>
+        </div>
+        <form class="card form-grid" data-validate data-request-form>
+          <label class="field"><span>Имя</span><input class="input" name="name" data-required><small class="form-error"></small></label>
+          <label class="field"><span>Email</span><input class="input" name="email" type="email" data-required><small class="form-error"></small></label>
+          <label class="field wide"><span>Сообщение</span><textarea class="textarea" name="message" data-required></textarea><small class="form-error"></small></label>
+          <button class="btn wide" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><a class="logo" href="index.html"><span class="logo__mark">D</span><span>DemoSite</span></a><p class="muted">Каркас для максимального соответствия критериям демоэкзамена.</p></div>
+      <div><b>Разделы</b><a href="catalog.html">Каталог</a><a href="contacts.html">Контакты</a><a href="profile.html">Кабинет</a></div>
+      <div><b>Аккаунт</b><a href="login.html">Вход</a><a href="register.html">Регистрация</a></div>
+      <div><b>Документы</b><a href="docs/project-description.md">Описание</a><a href="docs/database-structure.md">БД</a></div>
+    </div>
+  </footer>
+
+  <div class="modal" id="requestModal"><div class="modal__body card"><div class="modal__head"><h2>Быстрая заявка</h2><button class="icon-btn" data-modal-close type="button">×</button></div><form class="form-grid" data-validate data-request-form><label class="field wide"><span>Email</span><input class="input" type="email" name="email" data-required><small class="form-error"></small></label><label class="field wide"><span>Сообщение</span><textarea class="textarea" name="message" data-required></textarea><small class="form-error"></small></label><button class="btn wide" type="submit">Отправить</button></form></div></div>
+
+  <script src="js/storage.js"></script><script src="js/validation.js"></script><script src="js/language.js"></script><script src="js/main.js"></script><script src="js/slider.js"></script>
+</body>
+</html>
