@@ -16,9 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("demo_exam_theme") || "light";
   document.documentElement.dataset.theme = savedTheme;
 
-  document.querySelector("[data-burger]")?.addEventListener("click", () => {
-    document.querySelector("[data-nav-links]")?.classList.toggle("is-open");
+  const burger = document.querySelector("[data-burger]");
+  const navLinks = document.querySelector("[data-nav-links]");
+  burger?.addEventListener("click", () => {
+    const isOpen = navLinks?.classList.toggle("is-open") ?? false;
+    burger.setAttribute("aria-expanded", String(isOpen));
   });
+  navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+    navLinks.classList.remove("is-open");
+    burger?.setAttribute("aria-expanded", "false");
+  }));
 
   document.querySelector("[data-theme-toggle]")?.addEventListener("click", () => {
     const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";

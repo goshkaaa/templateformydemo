@@ -1,73 +1,42 @@
-# MySQL-авторизация
+# MySQL и PHP
 
-Браузер не должен подключаться к MySQL напрямую. Поэтому проект использует схему:
+Проект работает по схеме:
 
-```
-HTML/CSS/JS -> Node.js API -> MySQL
-```
-
-Backend написан на чистом Node.js без Express. Он раздает статические файлы сайта и обрабатывает маршруты `/api/auth/*`.
-
-## Быстрый запуск через Docker
-
-```bash
-docker compose up --build
+```text
+PHP-страницы -> PDO -> MySQL
 ```
 
-После запуска:
+Для экзаменационного запуска используйте OpenServer и phpMyAdmin.
 
-- сайт: `http://127.0.0.1:3000`
-- MySQL: `127.0.0.1:3306`
-- база: `demo_exam`
-- пользователь БД: `demo_user`
-- пароль БД: `demo_password`
+## Импорт базы
 
-Демо-пользователь:
+1. Откройте phpMyAdmin.
+2. Импортируйте файл `sql/init.sql`.
+3. Проверьте, что появилась база `conferences_rf`.
 
-- email: `demo@example.com`
-- пароль: `Demo1234`
+Файл создает таблицы:
 
-Если до этого контейнеры уже запускались со старой схемой БД, сбросьте volume и поднимите заново:
+- `users`;
+- `rooms`;
+- `bookings`;
+- `reviews`.
 
-```bash
-docker compose down -v
-docker compose up --build
+## Подключение
+
+Настройки находятся в `config.php`:
+
+```php
+const DB_HOST = '127.0.0.1';
+const DB_NAME = 'conferences_rf';
+const DB_USER = 'root';
+const DB_PASS = '';
 ```
 
-## Что создается автоматически
-
-Файл `sql/init.sql` автоматически создает:
-
-- `users`
-- `products`
-- `orders`
-- `order_items`
-- `favorites`
-- `requests`
-
-Также добавляются демо-пользователь, товары, заказ, заявка и избранное.
-
-## API
-
-- `POST /api/auth/login` — вход.
-- `POST /api/auth/register` — регистрация.
-- `POST /api/auth/logout` — выход.
-- `GET /api/auth/me` — текущий пользователь, заявки, заказы, избранное.
-- `PUT /api/profile` — редактирование профиля.
-- `PUT /api/profile/password` — смена пароля.
+Для стандартного OpenServer эти значения обычно подходят без изменений.
 
 ## Безопасность
 
-- Пароли не хранятся открытым текстом.
-- Используется `PBKDF2-SHA512`.
-- Сессия хранится в `HttpOnly` cookie.
-- SQL-запросы выполняются через prepared statements.
-
-## Локальный запуск без Docker
-
-```bash
-npm install
-npm start
-```
-
-Перед запуском нужно поднять MySQL и создать БД через `sql/init.sql`.
+- Пользовательские пароли хранятся как хеши `password_hash`.
+- Проверка пароля выполняется через `password_verify`.
+- SQL-запросы используют PDO prepared statements.
+- Администратор защищен логином `Admin26` и паролем `Demo20`, как требуется в задании.
