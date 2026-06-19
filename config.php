@@ -1,12 +1,25 @@
 <?php
 declare(strict_types=1);
 
+const SESSION_LIFETIME = 604800;
+
+ini_set('session.gc_maxlifetime', (string) SESSION_LIFETIME);
+ini_set('session.use_strict_mode', '1');
+session_set_cookie_params([
+    'lifetime' => SESSION_LIFETIME,
+    'path' => '/',
+    'secure' => false,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 session_start();
 
 const DB_HOST = '127.0.0.1';
+const DB_PORT = 3306;
+const DB_SOCKET = '/tmp/mysql.sock';
 const DB_NAME = 'conferences_rf';
 const DB_USER = 'root';
-const DB_PASS = '';
+const DB_PASS = '12345678';
 
 const ADMIN_LOGIN = 'Admin26';
 const ADMIN_PASSWORD = 'Demo20';

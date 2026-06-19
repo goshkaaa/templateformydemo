@@ -1,10 +1,12 @@
-CREATE DATABASE IF NOT EXISTS conferences_rf
+DROP DATABASE IF EXISTS conferences_rf;
+
+CREATE DATABASE conferences_rf
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
 USE conferences_rf;
 
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE users (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   login VARCHAR(40) NOT NULL,
   password_hash VARCHAR(255) NOT NULL,
@@ -17,7 +19,7 @@ CREATE TABLE IF NOT EXISTS users (
   UNIQUE KEY uq_users_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS rooms (
+CREATE TABLE rooms (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(160) NOT NULL,
   type ENUM('Аудитория', 'Коворкинг', 'Кинозал') NOT NULL,
@@ -27,7 +29,7 @@ CREATE TABLE IF NOT EXISTS rooms (
   KEY idx_rooms_type (type)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS bookings (
+CREATE TABLE bookings (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   user_id INT UNSIGNED NOT NULL,
   room_id INT UNSIGNED NOT NULL,
@@ -43,7 +45,7 @@ CREATE TABLE IF NOT EXISTS bookings (
   CONSTRAINT fk_bookings_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS reviews (
+CREATE TABLE reviews (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   booking_id INT UNSIGNED NOT NULL,
   user_id INT UNSIGNED NOT NULL,
